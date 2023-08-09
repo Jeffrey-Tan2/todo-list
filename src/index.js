@@ -1,5 +1,6 @@
 import Task from './modules/task.js';
 import displayTask from './modules/UI.js'
+import Tasklist from './modules/tasklist.js';
 
 function getPriority() {
     let prio = document.getElementsByName("priority");
@@ -10,11 +11,11 @@ function getPriority() {
     }
 }
 
-let allTasks = new Array();
-
 const addBtn = document.getElementById("add-task-btn");
 const modal = document.getElementById("add-task");
-const closeForm = document.getElementsByClassName("close")[0];
+const editModal = document.getElementById("edit-task");
+const closeForm = document.getElementById("add-close");
+const closeEdit = document.getElementById("edit-close");
 const taskForm = document.getElementById("new-task-form");
 
 addBtn.addEventListener("click", () => {
@@ -26,12 +27,21 @@ closeForm.addEventListener("click", () => {
     taskForm.reset();
 });
 
+closeEdit.addEventListener("click", () => {
+    editModal.style.display = "none";
+});
+
 document.addEventListener("keyup", (e) => {
     if (e.key === "Escape") {
         modal.style.display = "none";
+        editModal.style.display = "none";
         taskForm.reset();
     }
 })
+
+let i = 0;
+let allTaskList = new Array();
+let allTasks = new Tasklist(allTaskList);
 
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -39,9 +49,10 @@ taskForm.addEventListener("submit", (e) => {
     let newDesc = document.getElementById("new-desc").value;
     let newDate = document.getElementById("new-date").value;
     let newPriority = getPriority();
-    let newTask = new Task(newTitle, newDesc, newDate, newPriority, false);
+    let newTask = new Task(i, newTitle, newDesc, newDate, newPriority, false);
     displayTask(newTask);
-    allTasks.push(newTask);
+    allTasks.addTask(newTask);
     taskForm.reset();
     modal.style.display = "none";
+    i++;
 })

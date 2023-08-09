@@ -29,7 +29,7 @@
                 <div class="task-form | modal-content">
                     <div class="modal-header">
                         <h2>Add a task</h2>
-                        <span class="close">&times;</span>
+                        <span id="add-close">&times;</span>
                     </div>
                     <form id="new-task-form">
                         <p>Title</p>
@@ -51,6 +51,32 @@
                     </form>
                 </div>
             </div>
+            <div id="edit-task" class="modal-edit">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Edit task</h2>
+                        <span id="edit-close">&times;</span>
+                    </div>
+                    <form id="edit-form">
+                        <p>New Title</p>
+                        <input id="edit-title" type="text" placeholder="Title" maxlength="100" required/>
+                        <p>New Description</p>
+                        <input id="edit-desc" type="text" placeholder="Description" maxlength="100"/>
+                        <p>New Due Date</p>
+                        <input id="edit-date" type="date" placeholder="Date" maxlength="10000"/>
+                        <p>New Priority</p>
+                        <div class="prio-select">
+                            <input type="radio" name="edit-priority" value="low"/>
+                            <label for="priority">Low</label>
+                            <input type="radio" name="edit-priority" value="med"/>
+                            <label for="priority">Medium</label>
+                            <input type="radio" name="edit-priority" value="high"/>
+                            <label for="priority">High</label>
+                        </div>
+                        <button id="submit-edit" type="submit">Edit task</button>
+                    </form>
+                </div>
+                </div>
             <div id="tasks"></div>
         </div>
     </div>
