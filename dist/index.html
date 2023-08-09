@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script src="main.js" defer></script>
+    <div class="header">
+        <h1 class="title">Todo List</h1>
+    </div>
+    <div class="main">
+        <nav class="navbar">
+            <button class="nav-btn">All tasks</button>
+            <button class="nav-btn">Daily tasks</button>
+            <button class="nav-btn">Weekly tasks</button>
+            <button class="nav-btn">+ Add Project</button>
+            Projects
+            <div class="projects"></div>
+        </nav>
+        <div class="content">
+            <div class="content-header">
+                <span class="small-title">All tasks</span>
+                <button id="add-task-btn" class="big-btn">+ Add task</button>
+            </div>
+            <div id="add-task" class="modal">
+                <div class="task-form | modal-content">
+                    <div class="modal-header">
+                        <h2>Add a task</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <form id="new-task-form">
+                        <p>Title</p>
+                        <input id="new-title" type="text" placeholder="Title" maxlength="100" required/>
+                        <p>Description</p>
+                        <input id="new-desc" type="text" placeholder="Description" maxlength="100"/>
+                        <p>Due Date</p>
+                        <input id="new-date" type="date" placeholder="Date" maxlength="10000"/>
+                        <p>Priority</p>
+                        <div class="prio-select">
+                            <input type="radio" name="priority" value="low"/>
+                            <label for="priority">Low</label>
+                            <input type="radio" name="priority" value="med"/>
+                            <label for="priority">Medium</label>
+                            <input type="radio" name="priority" value="high"/>
+                            <label for="priority">High</label>
+                        </div>
+                        <button id="submit-task" type="submit">Add task</button>
+                    </form>
+                </div>
+            </div>
+            <div id="tasks"></div>
+        </div>
+    </div>
+</body>
+</html>

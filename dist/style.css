@@ -1,0 +1,193 @@
+@font-face {
+    font-family: Roboto;
+    src: url('Roboto-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.small-title {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.nav-btn {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    background: transparent;
+    border: transparent;
+}
+
+#add-task-btn {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 30px;
+    font-size: 24px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.content-header {
+    display: flex;
+    gap: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+#tasks {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-content {
+    background-color: lightgrey;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+#new-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.close {
+    color: rgba(255,0,0,0.5);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    gap: 5px;
+    background: rgba(128,128,128,0.2);
+    border-radius: 10px;
+}
+
+.task-btns {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.task-btn {
+    font-size: 16px;
+    background: transparent;
+    border: transparent;
+    height: 30px;
+    width: 30px;
+}
+
+.low {
+    border: 4px solid rgba(255,0,0,0.2);
+}
+
+.med {
+    border: 4px solid rgba(255,0,0,0.4);
+}
+
+.high {
+    border: 4px solid rgba(255,0,0,0.6);
+}
+
+.title-content {
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.desc-content,
+.prio-content,
+.date-content {
+    font-size: 16px;
+}
+
+.date-content {
+    font-weight: 900;
+}
+
+.hidden {
+    display: none;
+}
