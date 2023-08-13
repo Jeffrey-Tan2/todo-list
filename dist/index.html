@@ -3,81 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
     <link rel="stylesheet" href="./style.css">
+    <title>Todo List</title>
+    <link rel="icon" type="image/x-icon" href="marker-check.svg">
 </head>
 <body>
-    <script src="main.js" defer></script>
+    <script src="./main.js" defer></script>
     <div class="header">
-        <h1 class="title">Todo List</h1>
+        <h1>Todo List</h1>
+        <img class="header-img" src="notepad.svg">
     </div>
-    <div class="main">
-        <nav class="navbar">
-            <button class="nav-btn">All tasks</button>
-            <button class="nav-btn">Daily tasks</button>
-            <button class="nav-btn">Weekly tasks</button>
-            <button class="nav-btn">+ Add Project</button>
-            Projects
-            <div class="projects"></div>
-        </nav>
-        <div class="content">
-            <div class="content-header">
-                <span class="small-title">All tasks</span>
-                <button id="add-task-btn" class="big-btn">+ Add task</button>
+    <div class="root">
+        <div id="projects" class="project-bar">
+            <button id="all-tasks" class="project-btn">All tasks</button>
+            <button id="add-project" class="add-project-btn">+ Add project</button>
+            <input class="hidden" id="project-title" type="text" placeholder="Enter project..." required />
+            <button class="hidden" id="confirm-project">OK</button>
+            <button class="hidden" id="cancel-project">Cancel</button>
+            <span class="project-list">Project List</span>
+        </div>
+        <div>
+            <div class="input">
+                <span id="curr-project"></span>
+                <form id="task-form">
+                    <input id="task-title" type="text" placeholder="Enter task..." required />
+                    <button id="add-task" type="submit">+ Add task</button>
+                </form>
             </div>
-            <div id="add-task" class="modal">
-                <div class="task-form | modal-content">
-                    <div class="modal-header">
-                        <h2>Add a task</h2>
-                        <span id="add-close">&times;</span>
-                    </div>
-                    <form id="new-task-form">
-                        <p>Title</p>
-                        <input id="new-title" type="text" placeholder="Title" maxlength="100" required/>
-                        <p>Description</p>
-                        <input id="new-desc" type="text" placeholder="Description" maxlength="100"/>
-                        <p>Due Date</p>
-                        <input id="new-date" type="date" placeholder="Date" maxlength="10000"/>
-                        <p>Priority</p>
-                        <div class="prio-select">
-                            <input type="radio" name="priority" value="low"/>
-                            <label for="priority">Low</label>
-                            <input type="radio" name="priority" value="med"/>
-                            <label for="priority">Medium</label>
-                            <input type="radio" name="priority" value="high"/>
-                            <label for="priority">High</label>
-                        </div>
-                        <button id="submit-task" type="submit">Add task</button>
-                    </form>
-                </div>
-            </div>
-            <div id="edit-task" class="modal-edit">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Edit task</h2>
-                        <span id="edit-close">&times;</span>
-                    </div>
-                    <form id="edit-form">
-                        <p>New Title</p>
-                        <input id="edit-title" type="text" placeholder="Title" maxlength="100" required/>
-                        <p>New Description</p>
-                        <input id="edit-desc" type="text" placeholder="Description" maxlength="100"/>
-                        <p>New Due Date</p>
-                        <input id="edit-date" type="date" placeholder="Date" maxlength="10000"/>
-                        <p>New Priority</p>
-                        <div class="prio-select">
-                            <input type="radio" name="edit-priority" value="low"/>
-                            <label for="priority">Low</label>
-                            <input type="radio" name="edit-priority" value="med"/>
-                            <label for="priority">Medium</label>
-                            <input type="radio" name="edit-priority" value="high"/>
-                            <label for="priority">High</label>
-                        </div>
-                        <button id="submit-edit" type="submit">Edit task</button>
-                    </form>
-                </div>
-                </div>
-            <div id="tasks"></div>
+            <div id="tasks" class="content"></div>
         </div>
     </div>
 </body>
